@@ -332,14 +332,14 @@ function initFloatingFlowers() {
   // Respect user's motion preference — skip entirely
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  // Color palette — matches the site's brand tokens
+  // Color palette — matches bride & groom dress palette (#F6F1E6 Ivory & #0D1B2A Midnight Navy with Gold)
   var colors = [
-    "#C9A07A", // warm gold
-    "#E8D0AA", // light gold
-    "#9A7040", // dark gold
-    "#8A9678", // sage green
-    "#D4DBC8", // pale celadon
-    "#626D53", // forest green
+    "#C5A059", // warm royal gold
+    "#E8D0AA", // champagne gold
+    "#F6F1E6", // ivory pearl
+    "#415A77", // soft slate navy
+    "#778DA9", // misty steel blue
+    "#1B263B", // midnight navy
   ];
 
   // Fewer petals on smaller screens for performance
@@ -359,7 +359,7 @@ function initFloatingFlowers() {
       + '<ellipse cx="20" cy="10" rx="6" ry="10" transform="rotate(144 20 20)" opacity="0.9"/>'
       + '<ellipse cx="20" cy="10" rx="6" ry="10" transform="rotate(216 20 20)" opacity="0.9"/>'
       + '<ellipse cx="20" cy="10" rx="6" ry="10" transform="rotate(288 20 20)" opacity="0.9"/>'
-      + '<circle cx="20" cy="20" r="4.5" fill="#FBF4E3"/>'
+      + '<circle cx="20" cy="20" r="4.5" fill="#F6F1E6"/>'
       + '</g></svg>';
   }
 
@@ -691,14 +691,14 @@ document.addEventListener("DOMContentLoaded", initFloatingFlowers);
     return day + " " + month + " AT " + hours + ":" + minutes + " " + ampm;
   }
 
-  // Avatar background colors in luxury emerald & gold tones
+  // Avatar background colors in luxury midnight navy & gold tones
   function getAvatarColor(name) {
     var colors = [
-      "linear-gradient(135deg, #2E4538 0%, #1E3026 100%)", // deep emerald
-      "linear-gradient(135deg, #C9A07A 0%, #9A7040 100%)", // warm gold
-      "linear-gradient(135deg, #4A6355 0%, #2A3C33 100%)", // sage green
+      "linear-gradient(135deg, #0D1B2A 0%, #1B263B 100%)", // midnight navy
+      "linear-gradient(135deg, #C5A059 0%, #8C6D2B 100%)", // warm gold
+      "linear-gradient(135deg, #415A77 0%, #1B263B 100%)", // royal slate navy
       "linear-gradient(135deg, #A88258 0%, #684C2C 100%)", // antique bronze
-      "linear-gradient(135deg, #1F2D24 0%, #0E1611 100%)"  // forest night
+      "linear-gradient(135deg, #1B263B 0%, #0D1B2A 100%)"  // deep prussian navy
     ];
     var code = (name || "A").charCodeAt(0);
     return colors[code % colors.length];
