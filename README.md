@@ -1,3 +1,3 @@
 # atiq-meharin
 
-Wedding invitation website for **Muhammed Atiq Rasheed & Mehrin Firdouse**.
+Wedding invitation website for **Muhammed Atiq Rasheed & Mehrin Firdousi**.

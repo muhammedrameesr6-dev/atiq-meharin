@@ -1,5 +1,5 @@
 /* ============================================================
-   MUHAMMED ATIQ RASHEED & MEHRIN FIRDOUSE — WEDDING INVITATION
+   MUHAMMED ATIQ RASHEED & MEHRIN FIRDOUSI — WEDDING INVITATION
    Vanilla JS — gate intro, countdown, scroll reveals
    ============================================================ */
 (function () {
@@ -295,7 +295,7 @@
       var lines = [];
       lines.push("Assalamu Alaikum \uD83C\uDF39");
       lines.push("");
-      lines.push("*Muhammed Atiq Rasheed & Mehrin Firdouse — Wedding RSVP*");
+      lines.push("*Muhammed Atiq Rasheed & Mehrin Firdousi — Wedding RSVP*");
       lines.push("");
       lines.push("*Name:* " + name);
       lines.push("*Attendance:* " + (attending ? "\u2705 Joyfully Accepts" : "\u274C Regretfully Declines"));
@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", initFloatingFlowers);
 
   // Groom starts at 1.8 s, Bride starts at 2.7 s
   buildLetters("gateName1", "Muhammed Atiq Rasheed", 1.8);
-  buildLetters("gateName2", "Mehrin Firdouse", 2.7);
+  buildLetters("gateName2", "Mehrin Firdousi", 2.7);
 
   // After all letters have landed, add the subtle heartbeat glow
   var namesEl = document.querySelector(".gate__names");
