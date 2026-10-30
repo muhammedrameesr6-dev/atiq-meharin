@@ -1,5 +1,5 @@
 /* ============================================================
-   MEHRIN & ATIQ — WEDDING INVITATION
+   MUHAMMED ATIQ RASHEED & MEHRIN FIRDOUSE — WEDDING INVITATION
    Vanilla JS — gate intro, countdown, scroll reveals
    ============================================================ */
 (function () {
@@ -295,7 +295,7 @@
       var lines = [];
       lines.push("Assalamu Alaikum \uD83C\uDF39");
       lines.push("");
-      lines.push("*Mehrin & Atiq — Wedding RSVP*");
+      lines.push("*Muhammed Atiq Rasheed & Mehrin Firdouse — Wedding RSVP*");
       lines.push("");
       lines.push("*Name:* " + name);
       lines.push("*Attendance:* " + (attending ? "\u2705 Joyfully Accepts" : "\u274C Regretfully Declines"));
@@ -401,38 +401,57 @@ document.addEventListener("DOMContentLoaded", initFloatingFlowers);
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ------------------------------------------------------------------
-     1. LETTER STAGGER — split each name into individual
-        <span class="gate__letter"> elements and animate each in with
+     1. LETTER STAGGER — split each name into words and individual
+        <span class="gate__letter"> elements, animating each in with
         a cascading delay.
   ------------------------------------------------------------------ */
-  function buildLetters(containerId, word, baseDelay) {
+  function buildLetters(containerId, text, baseDelay) {
     var el = document.getElementById(containerId);
     if (!el) return;
     el.innerHTML = "";
-    var chars = word.split("");
-    // original pacing (60 ms per letter) — tightened only for longer names so the
-    // whole intro sequence still lands on the same timeline
-    var step = Math.min(0.06, 0.55 / chars.length);
-    for (var i = 0; i < chars.length; i++) {
-      var span = document.createElement("span");
-      span.className = "gate__letter";
-      span.textContent = chars[i] === " " ? "\u00A0" : chars[i];
-      var delay = baseDelay + i * step;
-      span.style.animationDelay = delay.toFixed(2) + "s";
-      el.appendChild(span);
-    }
+    var words = text.split(" ");
+    var charCount = text.length;
+    var step = Math.min(0.045, 0.7 / charCount);
+    var globalIndex = 0;
+
+    words.forEach(function (w, wIdx) {
+      var wordSpan = document.createElement("span");
+      wordSpan.className = "gate__name-word-part";
+      wordSpan.style.display = "inline-block";
+      wordSpan.style.whiteSpace = "nowrap";
+
+      for (var i = 0; i < w.length; i++) {
+        var span = document.createElement("span");
+        span.className = "gate__letter";
+        span.textContent = w[i];
+        var delay = baseDelay + globalIndex * step;
+        span.style.animationDelay = delay.toFixed(2) + "s";
+        wordSpan.appendChild(span);
+        globalIndex++;
+      }
+      el.appendChild(wordSpan);
+
+      if (wIdx < words.length - 1) {
+        var spaceSpan = document.createElement("span");
+        spaceSpan.className = "gate__word-space";
+        spaceSpan.innerHTML = "&nbsp;";
+        spaceSpan.style.display = "inline-block";
+        el.appendChild(spaceSpan);
+        globalIndex++;
+      }
+    });
   }
 
-  // name 1 starts at 1.9 s, name 2 starts at 2.6 s
-  buildLetters("gateName1", "Mehrin", 1.9);
-  buildLetters("gateName2", "Atiq", 2.6);
+  // Groom starts at 1.8 s, Bride starts at 2.7 s
+  buildLetters("gateName1", "Muhammed Atiq Rasheed", 1.8);
+  buildLetters("gateName2", "Mehrin Firdouse", 2.7);
 
   // After all letters have landed, add the subtle heartbeat glow
   var namesEl = document.querySelector(".gate__names");
   if (namesEl && !reduced) {
     window.setTimeout(function () {
       namesEl.classList.add("is-beating");
-    }, 4000);
+    }, 3800);
   }
 
   /* ------------------------------------------------------------------
@@ -612,8 +631,8 @@ document.addEventListener("DOMContentLoaded", initFloatingFlowers);
   if (!form) return;
 
   var ADMIN_PASSWORD = "123456";
-  var DB_REF = "mehrin_atiq_wishes";
-  var LOCAL_KEY = "mehrin_atiq_wishes_data";
+  var DB_REF = "atiq_mehrin_wishes";
+  var LOCAL_KEY = "atiq_mehrin_wishes_data";
 
   var isAdmin = sessionStorage.getItem("wishesAdminAuthed") === "true";
   var displayLimit = 5;
