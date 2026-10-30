@@ -314,6 +314,32 @@ img, svg{ display: block; max-width: 100%; }
   animation: gate-fade-up 1s var(--ease) 1.7s forwards;
 }
 
+/* ---- gate couple portrait cameo ---- */
+.gate__portrait{
+  margin: .3rem auto .6rem;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  animation: gate-fade-up 1s var(--ease) 1.5s forwards;
+}
+.gate__portrait-ring{
+  width: clamp(76px, 18vw, 96px);
+  height: clamp(76px, 18vw, 96px);
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  padding: 3px;
+  background: radial-gradient(circle, rgba(203, 169, 104, 0.25), transparent);
+  box-shadow: 0 0 24px rgba(203, 169, 104, 0.35);
+  overflow: hidden;
+}
+.gate__portrait-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+}
+
 /* ---- names with letter stagger ---- */
 .gate__names{
   font-family: var(--font-script-hero); font-weight: 400;
@@ -565,6 +591,45 @@ img, svg{ display: block; max-width: 100%; }
   font-size: .72rem;
   color: rgba(255,255,255,.75);
   margin: 0 0 .6em;
+}
+
+/* ---- hero couple portrait (arched royal frame) ---- */
+.hero__portrait-wrap{
+  display: flex;
+  justify-content: center;
+  margin: .8rem auto 1.3rem;
+}
+.hero__portrait-arch{
+  position: relative;
+  width: clamp(190px, 36vw, 270px);
+  aspect-ratio: 2 / 3;
+  border-radius: 130px 130px 16px 16px;
+  border: 2px solid var(--gold);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(203, 169, 104, 0.25);
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+.hero__portrait-arch::before{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(203, 169, 104, 0.45);
+  border-radius: 126px 126px 12px 12px;
+  pointer-events: none;
+  z-index: 2;
+}
+.hero__portrait-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.8s cubic-bezier(.25, .46, .45, .94);
+}
+.hero__portrait-arch:hover .hero__portrait-img{
+  transform: scale(1.04);
 }
 
 /* Names — custom script (Edwardian Script ITC), huge, white */
@@ -1321,6 +1386,9 @@ a:focus-visible, button:focus-visible{
 @media (max-width: 480px){
   .section{ padding-inline: 1.2rem; }
   .venue__map-frame iframe{ height: 240px; }
+  .hero__portrait-wrap{ margin: .5rem auto .9rem; }
+  .hero__portrait-arch{ width: clamp(165px, 50vw, 215px); border-radius: 110px 110px 14px 14px; }
+  .hero__portrait-arch::before{ border-radius: 106px 106px 10px 10px; }
   .hero__name-line{ font-size: clamp(1.85rem, 6.2vw, 2.6rem); }
   .hero__amp-line { font-size: clamp(1.4rem, 4.8vw, 1.9rem); }
   .venue__actions{ flex-direction: column; align-items: center; gap: .7rem; }
@@ -1666,11 +1734,15 @@ a:focus-visible, button:focus-visible{
   .gate__bismillah-arabic{ font-size: clamp(1.3rem, 5vw, 1.9rem); }
   .gate__divider-ornament{ margin: .15rem auto .2rem; }
   .gate__flourish{ width: 80px; margin-bottom: .35rem; }
+  .gate__portrait{ margin: .15rem auto .35rem; }
+  .gate__portrait-ring{ width: 68px; height: 68px; }
   .gate__eyebrow{ margin-bottom: .3em; font-size: .7rem; }
   .gate__names{ line-height: 1.25; margin-bottom: .1em; }
   .gate__date{ margin-bottom: .9rem; font-size: .78rem; }
   .gate__button{ padding: .8rem 1.8rem; }
   .gate__tap-hint{ margin-top: .7rem; }
+  .hero__portrait-wrap{ margin: .4rem auto .7rem; }
+  .hero__portrait-arch{ width: 160px; }
 }
 
 /* ---- Landscape phones — gate scrollable when too short ---- */
@@ -1687,6 +1759,7 @@ a:focus-visible, button:focus-visible{
   }
   .gate__bismillah-arabic{ font-size: 1.2rem; }
   .gate__flourish{ display: none; }
+  .gate__portrait{ display: none; }
   .gate__names{ font-size: clamp(2rem, 8vw, 3rem); line-height: 1.2; }
   .gate__amp--animate{ font-size: clamp(1.5rem, 5vw, 2rem); }
   .gate__date{ margin-bottom: .8rem; }
