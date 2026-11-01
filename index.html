@@ -274,7 +274,7 @@
         <h3 class="couple-card__name">Mehrin Firdousi</h3>
         <div class="divider divider--small"><span></span><i></i><span></span></div>
         <p class="couple-card__relation">Daughter of</p>
-        <p class="couple-card__parents">Mr. Firdousi &amp; Mrs. Shabana</p>
+        <p class="couple-card__parents">Mr. Firdousi P.M. &amp; Mrs. Shabana Firdousi</p>
         <p class="couple-card__address">Pallipurath Cheepungal (H)<br>Edavilangu, Kodungallur<br>Thrissur Dist</p>
         <p class="couple-card__grandparents">Granddaughter of Late Maheen &amp; Fathima Maheen (Cheepungal)<br>and Late P. K. Ishack Pandaparambath &amp; Fathima Ibrahim (Naduvilakath)</p>
       </article>
@@ -326,7 +326,7 @@
       </div>
 
       <h2 class="story__title">Two Families, One Blessing</h2>
-      <p class="story__text">With hearts full of gratitude, the families of Rasheed &amp; Roshini (Mahe) and Firdousi &amp; Shabana (Thrissur) joyfully come together to celebrate the wedding reception of Muhammed Atiq Rasheed &amp; Mehrin Firdousi. Surrounded by the love and prayers of both families, we warmly invite you to be part of this auspicious occasion and celebrations.</p>
+      <p class="story__text">With hearts full of gratitude, the families of Rasheed &amp; Roshini (Mahe) and Firdousi &amp; Shabana Firdousi (Thrissur) joyfully come together to celebrate the wedding reception of Muhammed Atiq Rasheed &amp; Mehrin Firdousi. Surrounded by the love and prayers of both families, we warmly invite you to be part of this auspicious occasion and celebrations.</p>
 
     </div>
   </section>
@@ -390,104 +390,27 @@
     </div>
   </section>
 
-  <!-- ============ WISHES WALL ("SEND YOUR LOVE") ============ -->
-  <section class="section wishes-section" id="wishes-wall">
-    <div class="wishes-content reveal">
-
-      <div class="wishes-header">
-        <div class="wishes-monogram" aria-hidden="true">
-          <span class="monogram-text">A &amp; M</span>
-        </div>
-        <span class="section-eyebrow">— SEND YOUR LOVE —</span>
-        <h2 class="section-title">Wishes Wall</h2>
-        <div class="divider divider--small"><span></span><i></i><span></span></div>
+  <!-- ============ VENUE & DIRECTIONS ============ -->
+  <section class="section venue-section" id="venue">
+    <div class="venue-section__inner reveal">
+      <div class="divider divider--small"><span></span><i></i><span></span></div>
+      <p class="wishes-venue-name">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <span>Cacatte Convention Center, Manjakkal, Mahe</span>
+      </p>
+      <div class="wishes-venue-buttons">
+        <a class="wishes-venue-btn wishes-venue-btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cacatte+Convention+Center+Manjakkal+Mahe" target="_blank" rel="noopener">
+          <svg class="button__icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          <span>Get Directions</span>
+        </a>
+        <a class="wishes-venue-btn wishes-venue-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Cacatte+Convention+Center+Manjakkal+Mahe" target="_blank" rel="noopener">
+          <svg class="button__icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span>Open in Google Maps</span>
+        </a>
       </div>
-
-      <!-- Wishes Form Card -->
-      <div class="wishes-form-container">
-        <form class="wishes-form" id="wishesForm">
-          <div class="wishes-form-group">
-            <input type="text" id="wishesName" placeholder="Your name" class="wishes-input" required autocomplete="name" />
-          </div>
-
-          <div class="wishes-form-group">
-            <textarea id="wishesMessage" placeholder="Write a prayer, blessing, or warm wish for Muhammed Atiq Rasheed &amp; Mehrin Firdousi..."
-              class="wishes-textarea" rows="4" required></textarea>
-          </div>
-
-          <button type="submit" class="wishes-submit-btn">
-            <span>SEND WISH</span> <i class="fas fa-heart"></i>
-          </button>
-        </form>
-
-        <div id="wishesSuccessMsg" class="wishes-success-msg">
-          <i class="fas fa-check-circle" style="color:var(--emerald); margin-right:6px;"></i>
-          Thank you! Your heartfelt wish has been sent to Muhammed Atiq Rasheed &amp; Mehrin Firdousi.
-        </div>
-
-        <div class="owner-access-wrap">
-          <button type="button" id="ownerLoginBtn" class="owner-login-btn">
-            <i class="fas fa-lock"></i> <span>Owner View</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Wishes Display (Revealed for Owner View) -->
-      <div class="wishes-display" id="wishesDisplay" style="display: none;">
-        <div class="wishes-blessing-header">
-          <span class="section-eyebrow">— WISHES &amp; BLESSINGS —</span>
-          <h3 class="wishes-display-title">Words From Loved Ones</h3>
-          <div class="wishes-count">
-            <i class="fas fa-heart"></i> <span id="wishesCount">0</span> BLESSINGS RECEIVED
-          </div>
-          <div class="wishes-admin-badge" id="wishesAdminBadge" style="display: none;">
-            <i class="fas fa-user-shield"></i> Admin Mode — tap the trash icon to delete a wish
-          </div>
-        </div>
-
-        <div class="wishes-list" id="wishesList"></div>
-
-        <div class="wishes-view-more" id="viewMoreContainer" style="display: none;">
-          <button type="button" class="view-more-btn" id="viewMoreBtn">View More Wishes</button>
-        </div>
-      </div>
-
-      <!-- Compact Venue & Directions Button -->
-      <div class="wishes-venue-cta">
-        <div class="divider divider--small"><span></span><i></i><span></span></div>
-        <p class="wishes-venue-name">
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
-          <span>Cacatte Convention Center, Manjakkal, Mahe</span>
-        </p>
-        <div class="wishes-venue-buttons">
-          <a class="wishes-venue-btn wishes-venue-btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cacatte+Convention+Center+Manjakkal+Mahe" target="_blank" rel="noopener">
-            <svg class="button__icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-            <span>Get Directions</span>
-          </a>
-          <a class="wishes-venue-btn wishes-venue-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Cacatte+Convention+Center+Manjakkal+Mahe" target="_blank" rel="noopener">
-            <svg class="button__icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
-            <span>Open in Google Maps</span>
-          </a>
-        </div>
-      </div>
-
+      <div class="divider divider--small" style="margin-top: 2rem;"><span></span><i></i><span></span></div>
     </div>
   </section>
-
-  <!-- ============ CLOSING / FOOTER ============ -->
-  <footer class="section footer" id="footer">
-    <div class="footer__inner reveal">
-      <svg class="glyph glyph--star" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M20 2 L23 17 L38 20 L23 23 L20 38 L17 23 L2 20 L17 17 Z" fill="var(--gold)"/>
-      </svg>
-      <h2 class="footer__names"><span>Muhammed Atiq Rasheed</span> <span class="amp">&amp;</span> <span>Mehrin Firdousi</span></h2>
-      <p class="footer__date">15 · 12 · 2026</p>
-      <p class="footer__dua">"Our Lord, grant us from among our spouses comfort to our eyes, and make us a
-        model for the righteous." <span class="footer__dua-ref">— Al-Furqan 25:74</span></p>
-      <div class="divider divider--small"><span></span><i></i><span></span></div>
-      <p class="footer__note">Insha Allah</p>
-    </div>
-  </footer>
 
 </main>
 
